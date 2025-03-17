@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Stack } from 'expo-router';
-import { AuthProvider } from '../src/features/authentication/components';
+import { AuthProvider } from '../src/features/public/authentication/components';
 import AuthGuard from '../src/navigation/AuthGuard';
 import { View, ActivityIndicator, StyleSheet, Platform, Text } from 'react-native';
 import { colors } from '../src/theme';
@@ -100,7 +100,17 @@ export default function RootLayout() {
             headerShown: false,
             animation: 'fade',
           }}
-        />
+        >
+          {/* Define public routes */}
+          <Stack.Screen name="login" options={{ title: 'Login' }} />
+          <Stack.Screen name="forgot-password" options={{ title: 'Recuperar Senha' }} />
+          <Stack.Screen name="register" options={{ title: 'Cadastro' }} />
+          
+          {/* Define role-based routes */}
+          <Stack.Screen name="admin" options={{ title: 'Admin', headerShown: false }} />
+          <Stack.Screen name="trainer" options={{ title: 'Trainer', headerShown: false }} />
+          <Stack.Screen name="student" options={{ title: 'Student', headerShown: false }} />
+        </Stack>
       </AuthGuard>
     </AuthProvider>
   );

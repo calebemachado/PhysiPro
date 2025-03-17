@@ -1,50 +1,111 @@
-# Welcome to your Expo app 👋
+# PhysiPro
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+PhysiPro is a mobile application designed for physiotherapists, trainers, and their clients to manage rehabilitation programs, track progress, and enhance communication.
 
-## Get started
+## Tech Stack
 
-1. Install dependencies
+- React Native with Expo
+- TypeScript
+- Expo Router for navigation
+- React Context API for state management
+- AsyncStorage for local data persistence
+- Ionicons for UI icons
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- Role-based access control (Admin, Trainer, Student)
+- Authentication and authorization
+- Customized dashboards for different user roles
+- Profile management
+- Responsive design for different screen sizes
 
-   ```bash
-    npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
+This project follows a modular architecture organized by feature access and domain:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+PhysiPro/
+├── app/                       # Expo Router entry points
+├── src/
+│   ├── features/              # Feature modules
+│   │   ├── public/            # Features accessible to all users
+│   │   │   └── authentication/ # Authentication feature
+│   │   └── protected/         # Features requiring authentication
+│   │       ├── admin/         # Admin features
+│   │       ├── trainer/       # Trainer features
+│   │       └── student/       # Student features
+│   ├── navigation/            # Navigation components
+│   └── theme/                 # Theme configuration
+└── docs/                      # Project documentation
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The `src/features` directory contains all feature modules organized by access level (public/protected) and then by domain. Each feature module has its own set of components, screens, services, and utilities.
 
-## Learn more
+## Documentation
 
-To learn more about developing your project with Expo, look at the following resources:
+We maintain comprehensive documentation to help you understand, use, and contribute to the project:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Architecture Documentation](docs/ARCHITECTURE.md) - Overview of the system design and architectural decisions
+- [Project Setup Guide](docs/SETUP.md) - Instructions for setting up the development environment
+- [Feature Implementation Guide](docs/FEATURE_IMPLEMENTATION.md) - Step-by-step guide for implementing new features
+- [Style Guide](docs/STYLE_GUIDE.md) - Coding standards and style conventions
+- [API Documentation](docs/API_DOCUMENTATION.md) - Information about the API and data structures
+- [Deployment Guide](docs/DEPLOYMENT.md) - Instructions for deploying the application
+- [Contributing Guide](docs/CONTRIBUTING.md) - Guidelines for contributing to the project
 
-## Join the community
+## Development Setup
 
-Join our community of developers creating universal apps.
+### Prerequisites
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Node.js (v16 or newer)
+- npm (v7 or newer) or yarn (v1.22 or newer)
+- Expo CLI (`npm install -g expo-cli`)
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/physipro.git
+   cd physipro
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```
+   npm start
+   # or
+   yarn start
+   ```
+
+4. Run on device or emulator:
+   - Press `i` to run on iOS simulator
+   - Press `a` to run on Android emulator
+   - Scan the QR code with the Expo Go app on your device
+
+## Testing
+
+Run tests with:
+
+```
+npm test
+# or
+yarn test
+```
+
+## Deployment
+
+See the [Deployment Guide](docs/DEPLOYMENT.md) for detailed instructions on how to deploy the application to various environments.
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for details on how to contribute to the project.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
