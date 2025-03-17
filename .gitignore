@@ -30,9 +30,58 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
+.env.*
 .env*.local
+!.env.example
 
 # typescript
 *.tsbuildinfo
 
+# Project-specific
 app-example
+.cursor
+
+# Android/iOS build files
+android/build/
+android/app/build/
+android/app/debug.keystore
+android/app/release/
+android/gradle/
+android/local.properties
+android/.gradle/
+ios/build/
+ios/Pods/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# IDE files
+.idea/
+.vscode/
+.project
+.classpath
+*.swp
+*.swo
+.settings/
+
+# Logs and temporary files
+*.log
+*.tmp
+tmp/
+logs/
+coverage/
+
+# Expo EAS
+.eas/
+eas-build/
+eas-updates/
+*.eas.json.local
+
+# Cache files
+.cache/
+
+# Firebase config files
+google-services.json
+GoogleService-Info.plist
